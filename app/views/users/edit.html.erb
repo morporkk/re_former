@@ -9,3 +9,12 @@
   <%= f.password_field :password%><br>
   <%= f.submit "Submit" %>
 <% end %>
+
+<% if @user.errors.any? %>
+  <h3><%= pluralize(@user.errors.count, "errors")%></h3>
+  <ul>
+      <% @user.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+      <% end %>
+  </ul>
+<% end %>
